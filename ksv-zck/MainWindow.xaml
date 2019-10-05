@@ -1,0 +1,34 @@
+﻿<Controls:MetroWindow x:Class="ksv_zck.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ksv_zck"
+        xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="Kaitai Struct Visualizer" WindowStartupLocation="CenterScreen" WindowState="Maximized" Width ="1024" Height="768" MinWidth="1024" MinHeight="768">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Button Style="{StaticResource AccentedSquareButtonStyle}">
+                <TextBlock FontFamily="Ink Free" FontSize="18">
+                    Open Binary
+                </TextBlock>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <avalonEdit:TextEditor Name="ksyEditor" ShowLineNumbers="True" FontFamily="Consolas" FontSize="18" />
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <avalonEdit:TextEditor Name="binaryViewer" IsReadOnly="True" ShowLineNumbers="True" FontFamily="Consolas" FontSize="18" />
+        </Grid>
+    </Grid>
+</Controls:MetroWindow>
