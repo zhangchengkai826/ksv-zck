@@ -21,6 +21,7 @@ limitations under the License.
     xmlns:local="clr-namespace:ksv_zck"
     xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:hexEdit="clr-namespace:WpfHexaEditor;assembly=WPFHexaEditor"
     mc:Ignorable="d"
     Title="Kaitai Struct Visualizer" WindowStartupLocation="CenterScreen" WindowState="Maximized" Width ="1024" Height="768" MinWidth="1024" MinHeight="768">
     <Grid>
@@ -33,7 +34,7 @@ limitations under the License.
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-            <Button Style="{StaticResource AccentedSquareButtonStyle}">
+            <Button Style="{StaticResource AccentedSquareButtonStyle}" Click="Btn_Open_Binary_Click">
                 <TextBlock FontFamily="Ink Free" FontSize="18">
                     Open Binary
                 </TextBlock>
@@ -43,7 +44,7 @@ limitations under the License.
             <avalonEdit:TextEditor Name="ksyEditor" ShowLineNumbers="True" FontFamily="Consolas" FontSize="18" />
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1">
-            <avalonEdit:TextEditor Name="binaryViewer" IsReadOnly="True" ShowLineNumbers="True" FontFamily="Consolas" FontSize="18" />
+            <hexEdit:HexEditor Name="binaryViewer" AllowZoom="True" FontFamily="Consolas" ReadOnlyMode="True" />
         </Grid>
     </Grid>
 </Controls:MetroWindow>

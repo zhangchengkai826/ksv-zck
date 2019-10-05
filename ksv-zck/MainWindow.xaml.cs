@@ -23,6 +23,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -39,6 +40,17 @@ namespace ksv_zck
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Btn_Open_Binary_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new OpenFileDialog();
+            dlg.Title = "Open a Binary File";
+            dlg.Filter = "All files|*.*";
+            if(dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                binaryViewer.FileName = dlg.FileName;
+            }
         }
     }
 }
